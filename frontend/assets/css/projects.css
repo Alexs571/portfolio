@@ -1,0 +1,120 @@
+:root{
+    --font_primary: 'montserrat';
+    --font__secondary: 'roboto';
+    --gris: #717171;
+}
+
+.projects {
+    padding-right: 15%;
+    padding-left: 15%;
+    padding-top: 20%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 5rem;
+}
+
+.projects h2 {
+    font-size: 4rem; 
+    font-weight: bold;
+    font-family: var(--font_primary);
+
+}
+
+.project__list {
+    display: flex;
+    gap: 5rem;
+    justify-content: center;
+    align-items: flex-start; 
+    flex-wrap: nowrap;
+    font-weight: bold;
+}
+
+.project__item {
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; 
+    align-items: center; 
+    text-align: center;
+    width: 300px; 
+    min-height: 400px; 
+    box-sizing: border-box;
+}
+
+.project__item h3 {
+    margin-bottom: 1rem;
+    font-family: var(--font_primary);
+    font-size: 2rem;
+    font-weight: bold;
+   
+}
+
+.project__item p {
+    font-family: var(--font_primary);
+    font-weight: 400;
+    color: var(--gris);
+    padding: 1rem;
+    overflow-wrap: break-word; 
+    word-break: break-word; 
+    margin-top: auto; 
+    text-align: left;
+    font-weight: 400;
+}
+
+.img__projects,
+.img__container {
+    width: 320px;
+    height: 200px;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 10px rgba(126, 7, 7, 0.6);
+}
+
+.img__projects img,
+.img__container img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+}
+
+/* ============= Responsive ================== */
+@media screen and (max-width: 800px) {
+    .projects h2 {
+        font-size: 3rem; 
+        font-weight: 500;
+        padding-top: 20%;
+        margin-bottom: 20px;
+    }
+
+    .project__list {
+        flex-wrap: wrap; 
+        gap: 1rem;
+    }
+
+    .project__item {
+        width: 100%; 
+    }
+
+    .img__projects,
+    .img__container {
+        width: 80%; 
+        height: 80%;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .projects h2 {
+        font-size: 2rem;
+    }
+
+    .project__item h3 {
+        font-size: 1.5rem;
+    }
+
+    
+}

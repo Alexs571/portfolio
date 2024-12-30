@@ -1,0 +1,320 @@
+:root {
+    --background-colour: #040013;
+    --primary-font: 'montserrat';
+    --secondary-font: 'roboto';
+
+    /* fonts */
+    --body-font: "Montserrat", sans-serif;
+    --normal-font-size: .938rem;
+    --font-regular: 400;
+    --font-semi-bold: 600;
+}
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+body {
+    background-color: var(--background-colour);
+    font-family: var(--primary-font);
+    color: white;
+}
+
+
+ul {
+    list-style: none;
+}
+
+li {
+    list-style: none;
+}
+
+a {
+    text-decoration: none;
+}
+
+
+.container {
+    max-width: 1120px;
+    margin-inline: 1.5rem;
+}
+
+/* =============== HEADER ================== */
+.header {
+    position: fixed;
+    display: fixed;
+    padding-right: 15%;
+    padding-left: 15%;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #08001d; 
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.6);
+    z-index: 100;
+}
+
+
+/* =============== NAV ================== */
+.nav {
+    height: 3.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__logo,
+.nav__burger,
+.nav__close {
+    color: white;
+}
+
+.nav__data {
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.nav__logo {
+    display: inline-flex;
+    align-items: center;
+    column-gap: .25rem;
+    font-weight: var(--font-semi-bold);
+}
+
+.nav__link {
+    color: white;
+    background-color: #08001d; 
+    font-weight: var(--font-semi-bold);
+
+}
+.nav__link:hover , .dropdown__link:hover{
+    color: red;
+}
+
+.nav__logo img:hover {
+    filter: brightness(0) saturate(100%) invert(15%) sepia(60%) saturate(7397%) hue-rotate(2deg) brightness(99%) contrast(123%);
+}
+
+
+.nav__logo img {
+    width: 3.5rem;
+    height: 3.5rem;
+
+}
+
+
+.nav__toggle {
+    position: relative;
+    width: 32px;
+    height: 32px;
+
+}
+
+.nav__burger,
+.nav__close {
+    position: absolute;
+    height: max-content;
+    width: max-content;
+    inset: 0;
+    margin: auto;
+    font-size: 1.25rem;
+    cursor: pointer;
+    transition: opacity .3s, transform .3s;
+}
+
+
+.nav__close,
+.nav__burger {
+    opacity: 0;
+}
+
+.nav__list {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 3em;
+    font-weight: var(--font-semi-bold);
+}
+
+
+/* === Ver Menu====== */
+
+.dropdown__item {
+    position: relative; 
+    
+}
+
+.dropdown__menu {
+    display: none; 
+    position: absolute; 
+    top: 100%; 
+    left: 2;
+    background-color: #08001d; 
+    min-width: 150px; 
+}
+
+.dropdown__item:hover .dropdown__menu {
+    display: block; 
+}
+
+
+.dropdown__link {
+    padding: 1rem 1.5rem;
+    color: white;
+    display: flex;
+    align-items: center;
+    column-gap: .5rem;
+    font-weight: var(--font-semi-bold);
+    transition: background-color .3s;
+}
+
+
+.dropdown__link:hover {
+    background-color: #1e1e1e; 
+}
+
+.dropdown__arrow {
+    font-size: 1.25rem;
+    transition: transform .3s;
+}
+
+
+.dropdown__arrow{
+    opacity: 0;
+}
+/* responsive */
+@media screen and (max-width: 768px) {
+
+    .header {
+        padding-right: 2%;
+        padding-left: 2%;
+    }
+
+    .nav {
+        display: block;
+        justify-content: normal;
+        align-items: normal;
+        height: auto;
+    }
+
+    .nav__burger {
+        opacity: 1;
+    }
+
+    .nav__menu {
+        position: absolute;
+        left: 0;
+        top: 3.5rem;
+        width: 100%;
+        height: 0; /* Ajustado para que no ocupe toda la pantalla cuando está cerrado */
+        overflow: hidden; /* Para asegurar que el contenido del menú no se muestre cuando esté cerrado */
+        opacity: 0;
+        pointer-events: none; /* No permitir interacción cuando esté cerrado */
+        transition: top .4s, opacity .3s, height .3s ease-out; /* Animación de transición */
+        display: block; /* Mostrar el contenedor del menú */
+        z-index: 99; /* Asegura que el menú se muestre encima del contenido */
+    }
+
+    .nav__menu::-webkit-scrollbar {
+        width: 0;
+    }
+
+    .nav__list {
+        background-color: #08001d;
+        display: block;
+        justify-content: normal;
+        align-items: normal;
+        gap: 0;
+    }
+
+    .nav__link {
+        color: white;
+        background-color: #08001d;
+        font-weight: var(--font-semi-bold);
+        padding: 1rem 1.5rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color .3s;
+    }
+
+    .nav__link:hover {
+        background-color: #1e1e1e;
+    }
+
+    /* Mostrar menú */
+    .show-menu {
+        height: calc(100vh - 3.5rem); /* Ajustado para que ocupe toda la pantalla solo cuando está abierto */
+        opacity: 1;
+        pointer-events: all; /* Permitir interacción cuando el menú está abierto */
+    }
+
+    .show-icon .nav__burger {
+        opacity: 0;
+        transform: rotate(90deg);
+    }
+
+    .show-icon .nav__close {
+        opacity: 1;
+        transform: rotate(90deg);
+    }
+
+    /* Mostrar submenú */
+    .dropdown__arrow {
+        opacity: 1;
+    }
+
+    .dropdown__item {
+        cursor: pointer;
+    }
+
+    .dropdown__arrow {
+        font-size: 1.25rem;
+        font-weight: initial;
+        transition: transform .3s;
+    }
+
+    .dropdown__link {
+        padding: 1.25rem;
+        color: white;
+        display: flex;
+        align-items: center;
+        column-gap: .5rem;
+        font-weight: var(--font-semi-bold);
+        transition: var(--background-colour) .3;
+    }
+
+    .dropdown__link i {
+        font-size: 1.25rem;
+        font-weight: initial;
+    }
+
+    .dropdown__link:hover {
+        background-color: #1e1e1e;
+    }
+
+    .dropdown__menu {
+        position: relative;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height .3s ease-out;
+    }
+
+    .dropdown__item:hover .dropdown__menu {
+        max-height: 1000px;
+        transition: max-height .3s ease-out;
+        display: inline;
+    }
+
+    /* Rotar el icono */
+    .dropdown__item:hover .dropdown__arrow {
+        transform: rotate(180deg);
+    }
+}

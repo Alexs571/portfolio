@@ -1,0 +1,135 @@
+:root{
+    --font_primary: 'montserrat';
+
+
+    /* colours  */
+
+
+    --span:#C80000;
+    --gris:#717171;
+
+}
+
+
+
+h1{
+    font-family: var(--font_primary);
+    font-weight: bold;
+    font-size: 4.5rem;
+    margin-bottom: 36px;
+}
+
+h1 span{
+
+    color: var(--span);
+    font-weight: 900;
+    
+}
+
+
+.hero{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 13%;
+    padding-right: 13%;
+    padding-top: 2rem;
+    flex-direction: row;
+    height: 100vh;
+   margin-top: 5rem;
+}
+
+.cont__hero{
+    flex: 1;
+    justify-content: center;
+    align-items: start;
+    flex-direction: column;
+   
+}
+
+.cont__hero h2 {
+    
+
+    color: var(--gris);
+    font-size: 18px;
+    font-weight: bold;
+  
+}
+
+.cont__hero p {
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    color: var(--gris);
+    padding-bottom: 18px;
+    font-family: "Roboto", serif;
+
+}
+
+ .about__me{
+    font-weight: bold;
+}
+
+.skills__description{
+    font-weight: lighter;
+}
+.skills__icon {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.skills__icon .items {
+    width: 40px;
+    height: 40px;
+}
+.img__hero {
+    flex: 1;
+}
+
+.img__hero img {
+    width: 100%; 
+    height: auto; 
+    border-radius: 50%;
+    transform: scalex(-1);
+    
+    
+}
+
+
+/*============== Responsive =================  */
+
+
+@media screen and (max-width: 768px) {
+    .hero{
+        flex-direction: column;
+       padding-top: 100%;
+    }
+
+    .cont__hero{
+       
+        text-align: center;
+    }
+
+    .img__hero img {
+       opacity: 0;
+    }
+
+    h1{
+        font-size: 5rem;
+    }
+
+    .cont__hero h2 {
+        font-size: .75rem;
+    }
+
+    .about__me {
+        font-size: .5rem;
+    }
+    .skills__description{
+        font-size: .5rem;
+        
+    }
+
+}
+
+
